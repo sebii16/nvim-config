@@ -16,12 +16,21 @@ require 'nvim-treesitter'.setup({
 	highlight = { enable = true },
 	indent = { enable = true },
 })
+
 require 'cyberdream'.setup({
     transparent = vim.uv.os_uname().sysname == 'Linux'
 })
-require 'mini.pick'.setup()
+
+require 'mini.pick'.setup({
+    mappings = {
+        move_down = '<Tab>',
+        move_up = '<S-Tab>',
+        toggle_preview = '<M-Space>',
+        refine_marked = '',
+        toggle_info = '',
+    },
+})
+
 require 'mini.completion'.setup()
 require 'mason'.setup()
 require 'mason-lspconfig'.setup()
-
-

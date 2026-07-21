@@ -13,5 +13,6 @@ o.expandtab = true
 g.mapleader = ' '
 o.winborder = 'rounded'
 o.lazyredraw = true
+o.mouse = ''
 
 vim.cmd('colorscheme cyberdream')
