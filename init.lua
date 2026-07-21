@@ -18,12 +18,14 @@ require 'nvim-treesitter'.setup({
 	highlight = { enable = true },
 	indent = { enable = true },
 })
-require 'cyberdream'.setup()
+require 'cyberdream'.setup({
+    transparent = vim.uv.os_uname().sysname == 'Linux'
+})
 require 'mini.pick'.setup()
 require 'mini.completion'.setup()
 require 'nvim-autopairs'.setup()
 require 'mason'.setup()
-require 'mason-lspconfig'.setup({ ensure_installed = { 'lua_ls', 'zls', 'clangd' }, automatic_enable = true, })
+require 'mason-lspconfig'.setup()
 
 -- settings
 local o = vim.o
