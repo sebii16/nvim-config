@@ -3,10 +3,9 @@ require 'autopairs'
 local km_set = vim.keymap.set
 
 km_set('n', '<leader>f', ':Pick files<CR>', { silent = true })
-
 km_set('n', '<leader>g', ':Pick grep_live<CR>', { silent = true })
-
 km_set('n', '<leader>o', ':update<CR> :source<CR>', { silent = true })
+km_set('n', '<leader>d', vim.lsp.buf.definition, { silent = true })
 
 km_set('i', '<Tab>', function()
 	if vim.fn.pumvisible() == 1 then
