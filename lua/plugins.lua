@@ -1,6 +1,7 @@
 vim.pack.add({
     'https://github.com/nvim-treesitter/nvim-treesitter',
-	'https://github.com/scottmckendry/cyberdream.nvim',
+    'https://github.com/neanias/everforest-nvim',
+    'https://github.com/rebelot/kanagawa.nvim',
 	'https://github.com/echasnovski/mini.pick',
 	'https://github.com/echasnovski/mini.completion',
 	'https://github.com/neovim/nvim-lspconfig',
@@ -17,9 +18,11 @@ require 'nvim-treesitter'.setup({
 	indent = { enable = true },
 })
 
-require 'cyberdream'.setup({
-    transparent = vim.uv.os_uname().sysname == 'Linux'
+require 'kanagawa'.setup({
+    transparent = true,
+    theme = 'wave'
 })
+vim.cmd[[colorscheme kanagawa]]
 
 require 'mini.pick'.setup({
     mappings = {
@@ -33,4 +36,7 @@ require 'mini.pick'.setup({
 
 require 'mini.completion'.setup()
 require 'mason'.setup()
-require 'mason-lspconfig'.setup()
+require 'mason-lspconfig'.setup({
+    ensure_installed = { 'clangd', 'zls', 'lua_ls' },
+    automatic_enable = true,
+})

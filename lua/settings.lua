@@ -14,5 +14,4 @@ g.mapleader = ' '
 o.winborder = 'rounded'
 o.lazyredraw = true
 o.mouse = ''
-
-vim.cmd('colorscheme cyberdream')
+vim.diagnostic.config({ virtual_text = true })
